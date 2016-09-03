@@ -30,8 +30,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             case R.id.btn1:
                 Button btn = new Button(this);
-                RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams)btn1.getLayoutParams();
-                
+                TableLayout.LayoutParams layoutParams = (TableLayout.LayoutParams)btn1.getLayoutParams();
+
                 btn.setLayoutParams(layoutParams);
                 //btn.setText(n++);
 
