@@ -18,13 +18,24 @@
         android:layout_margin="3dp"
         android:id="@+id/rlContainsInputInfo">
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeLayout2">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/start"/>
+        </RelativeLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp"
             android:text="@string/InputRequests"
             android:textSize="@dimen/requests_text_header"
-            android:id="@+id/tvInputRequestsHeader"/>
+            android:id="@+id/tvInputRequestsHeader"
+            android:layout_below="@+id/relativeLayout2"
+            android:layout_centerHorizontal="true" />
 
         <RelativeLayout
             android:layout_width="match_parent"
