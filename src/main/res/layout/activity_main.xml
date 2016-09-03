@@ -116,7 +116,9 @@
 
                 <!-- 1-st device -->
                 <RelativeLayout android:layout_width="wrap_content" android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:scrollbars="vertical"
+                    android:isScrollContainer="false">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -180,7 +182,8 @@
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentRight="true"
-                            android:layout_alignParentEnd="true">
+                            android:layout_alignParentEnd="true"
+                            android:id="@+id/tl1">
                             <Button />
                         </TableLayout>
 
