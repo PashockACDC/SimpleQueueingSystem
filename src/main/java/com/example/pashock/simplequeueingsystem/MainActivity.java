@@ -6,12 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
     static int n = 1;
-    Button btn1;
     TableLayout tl1;
+    TableRow tableRow;
 
     /** Called when the activity is first created. */
     public void onCreate(Bundle savedInstanceState) {
@@ -19,23 +21,23 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
 
         tl1 = (TableLayout)findViewById(R.id.tl1);
-        btn1 = (Button)findViewById(R.id.btn1);
+        tableRow = (TableRow)findViewById(R.id.tr1);
 
-        btn1.setOnClickListener(this);
+        tableRow.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
 
-            case R.id.btn1:
-                Button btn = new Button(this);
-                TableLayout.LayoutParams layoutParams = (TableLayout.LayoutParams)btn1.getLayoutParams();
+            case R.id.tr1:
+                TextView tv = new TextView(this);
+                TableLayout.LayoutParams layoutParams = (TableLayout.LayoutParams)tableRow.getLayoutParams();
 
-                btn.setLayoutParams(layoutParams);
-                //btn.setText(n++);
+                tv.setLayoutParams(layoutParams);
+                tv.setText("request # " + String.valueOf(n++));
 
-                tl1.addView(btn);
+                tl1.addView(tv);
                 break;
 
         }
