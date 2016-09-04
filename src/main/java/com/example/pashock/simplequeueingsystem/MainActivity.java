@@ -23,14 +23,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
         tl1 = (TableLayout)findViewById(R.id.tl1);
         tableRow = (TableRow)findViewById(R.id.tr1);
 
-        tableRow.setOnClickListener(this);
+        tl1.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
 
-            case R.id.tr1:
+            case R.id.tl1:
                 TextView tv = new TextView(this);
                 TableLayout.LayoutParams layoutParams = (TableLayout.LayoutParams)tableRow.getLayoutParams();
 
