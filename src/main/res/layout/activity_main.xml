@@ -56,7 +56,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="bottom"
                     android:text="STUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\n"
-                    android:textSize="@dimen/regular_text"/>
+                    android:textSize="@dimen/regular_text"
+                    android:id="@+id/tvInputRequests"/>
             </ScrollView>
 
         </RelativeLayout>

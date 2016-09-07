@@ -7,10 +7,12 @@ import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
     static int n = 1;
+    TextView tv;
     TableLayout[] tl;
     TableRow tableRow;
     ImageView[] imageViews;
@@ -48,15 +50,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.image_Device_2:
             case R.id.image_Device_3:
             case R.id.image_Device_4:
-                TextView tv = new TextView(this);
+                tv = new TextView(this);
                 TableLayout.LayoutParams layoutParams = (TableLayout.LayoutParams)tableRow.getLayoutParams();
-
                 tv.setLayoutParams(layoutParams);
                 tv.setText("request # " + String.valueOf(n++));
                 float textSize = this.getResources().getDimension(R.dimen.regular_text_in_table);
                 tv.setTextSize(textSize);
                 tv.setVisibility(View.VISIBLE);
-
                 switch (view.getId()) {
                     case R.id.image_Device_1:
                         tl[0].addView(tv);
@@ -75,4 +75,5 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         }
     }
+
 }
