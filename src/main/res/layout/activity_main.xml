@@ -155,7 +155,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/image_status_margin"
                                 android:layout_marginRight="@dimen/image_status_margin"
-                                android:background="@drawable/not_work"/>
+                                android:background="@drawable/not_work"
+                                android:id="@+id/image_Device_1"/>
                         </RelativeLayout>
                     </RelativeLayout>
 
@@ -203,6 +204,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="request # 000"
+                                        android:visibility="gone"
                                         android:textSize="@dimen/regular_text_in_table"/>
                                 </TableRow>
                             </TableLayout>
@@ -245,7 +247,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/image_status_margin"
                                 android:layout_marginRight="@dimen/image_status_margin"
-                                android:background="@drawable/not_work"/>
+                                android:background="@drawable/not_work"
+                                android:id="@+id/image_Device_2"/>
                         </RelativeLayout>
                     </RelativeLayout>
 
@@ -334,7 +337,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/image_status_margin"
                                 android:layout_marginRight="@dimen/image_status_margin"
-                                android:background="@drawable/not_work"/>
+                                android:background="@drawable/not_work"
+                                android:id="@+id/image_Device_3"/>
                         </RelativeLayout>
                     </RelativeLayout>
 
@@ -424,7 +428,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/image_status_margin"
                                 android:layout_marginRight="@dimen/image_status_margin"
-                                android:background="@drawable/not_work"/>
+                                android:background="@drawable/not_work"
+                                android:id="@+id/image_Device_4"/>
                         </RelativeLayout>
                     </RelativeLayout>
 
