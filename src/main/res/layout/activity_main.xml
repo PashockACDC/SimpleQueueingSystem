@@ -18,13 +18,24 @@
         android:layout_margin="3dp"
         android:id="@+id/rlContainsInputInfo">
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeLayout2">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/start"/>
+        </RelativeLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp"
             android:text="@string/InputRequests"
             android:textSize="@dimen/requests_text_header"
-            android:id="@+id/tvInputRequestsHeader"/>
+            android:id="@+id/tvInputRequestsHeader"
+            android:layout_below="@+id/relativeLayout2"
+            android:layout_centerHorizontal="true" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -116,12 +127,14 @@
 
                 <!-- 1-st device -->
                 <RelativeLayout android:layout_width="wrap_content" android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:scrollbars="vertical"
+                    android:isScrollContainer="false">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/rlContainsDevice_1">
+                        android:id="@+id/rlContainsDevice_1_indicators">
                         <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -142,36 +155,78 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/image_status_margin"
                                 android:layout_marginRight="@dimen/image_status_margin"
-                                android:background="@drawable/not_work"/>
+                                android:background="@drawable/not_work"
+                                android:id="@+id/image_Device_1"/>
                         </RelativeLayout>
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/rlContainsDevice_1">
+                        android:layout_below="@+id/rlContainsDevice_1_indicators"
+                        android:id="@+id/rlContainsSugests_1">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="ОУ 1"
+                            android:text="выберите 1 ... 2"
                             android:textSize="@dimen/regular_text"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/rlContainsSugests_1"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignRight="@+id/rlContainsDevice_1_indicators"
+                        android:layout_alignEnd="@+id/rlContainsDevice_1_indicators">
+
+
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tl1"
+                                android:textSize="@dimen/regular_text_in_table">
+                                <TableRow
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tr1"
+                                    android:text="+"
+                                    android:textSize="@dimen/regular_text_in_table">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="request # 000"
+                                        android:visibility="gone"
+                                        android:textSize="@dimen/regular_text_in_table"/>
+                                </TableRow>
+                            </TableLayout>
+                        </ScrollView>
+
+
+
                     </RelativeLayout>
 
 
                 </RelativeLayout>
 
                 <!-- 2-nd device -->
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
+                <RelativeLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scrollbars="vertical"
+                    android:isScrollContainer="false">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/rlContainsDevice_2">
+                        android:id="@+id/rlContainsDevice_2_indicators">
                         <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -192,35 +247,76 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/image_status_margin"
                                 android:layout_marginRight="@dimen/image_status_margin"
-                                android:background="@drawable/not_work"/>
+                                android:background="@drawable/not_work"
+                                android:id="@+id/image_Device_2"/>
                         </RelativeLayout>
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/rlContainsDevice_2">
+                        android:layout_below="@+id/rlContainsDevice_2_indicators"
+                        android:id="@+id/rlContainsSugests_2">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="ОУ 2"
+                            android:text="выберите 1 ... 2"
                             android:textSize="@dimen/regular_text"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true" />
                     </RelativeLayout>
 
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/rlContainsSugests_2"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignRight="@+id/rlContainsDevice_2_indicators"
+                        android:layout_alignEnd="@+id/rlContainsDevice_2_indicators">
+
+
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tl2">
+                                <TableRow
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tr2"
+                                    android:text="+"
+                                    android:textSize="@dimen/regular_text_in_table">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="request #"
+                                        android:textSize="@dimen/regular_text_in_table"/>
+                                </TableRow>
+                            </TableLayout>
+                        </ScrollView>
+
+
+
+                    </RelativeLayout>
+
+
                 </RelativeLayout>
 
                 <!-- 3-rd device -->
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
+                <RelativeLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scrollbars="vertical"
+                    android:isScrollContainer="false">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/rlContainsDevice_3">
+                        android:id="@+id/rlContainsDevice_3_indicators">
                         <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -241,35 +337,77 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/image_status_margin"
                                 android:layout_marginRight="@dimen/image_status_margin"
-                                android:background="@drawable/not_work"/>
+                                android:background="@drawable/not_work"
+                                android:id="@+id/image_Device_3"/>
                         </RelativeLayout>
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/rlContainsDevice_3">
+                        android:layout_below="@+id/rlContainsDevice_3_indicators"
+                        android:id="@+id/rlContainsSugests_3">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="ОУ 3"
+                            android:text="выберите 1 ... 2"
                             android:textSize="@dimen/regular_text"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true" />
                     </RelativeLayout>
 
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/rlContainsSugests_3"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignRight="@+id/rlContainsDevice_3_indicators"
+                        android:layout_alignEnd="@+id/rlContainsDevice_3_indicators">
+
+
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tl3"
+                                android:textSize="@dimen/regular_text_in_table">
+                                <TableRow
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tr3"
+                                    android:text="+"
+                                    android:textSize="@dimen/regular_text_in_table">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="request #"
+                                        android:textSize="@dimen/regular_text_in_table"/>
+                                </TableRow>
+                            </TableLayout>
+                        </ScrollView>
+
+
+
+                    </RelativeLayout>
+
+
                 </RelativeLayout>
 
                 <!-- 4-th device -->
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
+                <RelativeLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scrollbars="vertical"
+                    android:isScrollContainer="false">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/rlContainsDevice_4">
+                        android:id="@+id/rlContainsDevice_4_indicators">
                         <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -290,22 +428,63 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/image_status_margin"
                                 android:layout_marginRight="@dimen/image_status_margin"
-                                android:background="@drawable/not_work"/>
+                                android:background="@drawable/not_work"
+                                android:id="@+id/image_Device_4"/>
                         </RelativeLayout>
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/rlContainsDevice_4">
+                        android:layout_below="@+id/rlContainsDevice_4_indicators"
+                        android:id="@+id/rlContainsSugests_4">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="ОУ 4"
+                            android:text="выберите 1 ... 2"
                             android:textSize="@dimen/regular_text"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true" />
                     </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/rlContainsSugests_4"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignRight="@+id/rlContainsDevice_4_indicators"
+                        android:layout_alignEnd="@+id/rlContainsDevice_4_indicators">
+
+
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tl4">
+                                <TableRow
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tr4"
+                                    android:text="+"
+                                    android:textSize="@dimen/regular_text_in_table">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="request #"
+                                        android:textSize="@dimen/regular_text_in_table"/>
+                                </TableRow>
+                            </TableLayout>
+                        </ScrollView>
+
+
+
+                    </RelativeLayout>
+
 
                 </RelativeLayout>
 

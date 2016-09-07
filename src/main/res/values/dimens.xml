@@ -6,4 +6,5 @@
     <dimen name="device_name">20dp</dimen>
     <dimen name="regular_text">12dp</dimen>
     <dimen name="image_status_margin">10dp</dimen>
+    <dimen name="regular_text_in_table">12px</dimen>
 </resources>
