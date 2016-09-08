@@ -15,19 +15,39 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_margin="3dp"
+        android:layout_margin="5dp"
         android:id="@+id/rlContainsInputInfo">
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/relativeLayout2">
+            android:id="@+id/rlContainsStart">
             <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/image_size"
+                android:layout_height="@dimen/image_size"
                 android:background="@drawable/start"
                 android:id="@+id/ibStart"/>
         </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="3dp"
+            android:id="@+id/rlContainsSugests"
+            android:layout_alignRight="@+id/tvInputRequestsHeader"
+            android:layout_alignEnd="@+id/tvInputRequestsHeader"></RelativeLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Interval: 500"
+            android:textSize="@dimen/requests_text_header"
+            android:layout_below="@+id/rlContainsStart"
+            android:id="@+id/button"
+            android:layout_alignRight="@+id/tvInputRequestsHeader"
+            android:layout_alignEnd="@+id/tvInputRequestsHeader" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,8 +55,13 @@
             android:text="@string/InputRequests"
             android:textSize="@dimen/requests_text_header"
             android:id="@+id/tvInputRequestsHeader"
-            android:layout_below="@+id/relativeLayout2"
-            android:layout_centerHorizontal="true" />
+            android:layout_below="@+id/button"
+            android:layout_toEndOf="@+id/rlContainsStart"
+            android:layout_toRightOf="@+id/rlContainsStart"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -47,18 +72,30 @@
             android:layout_alignRight="@+id/tvInputRequestsHeader"
             android:layout_alignEnd="@+id/tvInputRequestsHeader"
             android:layout_below="@+id/tvInputRequestsHeader"
-            android:layout_above="@+id/rlInpusStatistics"
-            android:id="@+id/rl11111">
+            android:id="@+id/rlContainsInputRequests">
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <TextView
-                    android:layout_width="match_parent"
+                <TableLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="bottom"
-                    android:text="STUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\nSTUB  STUB  STUB\n"
-                    android:textSize="@dimen/regular_text"
-                    android:id="@+id/tvInputRequests"/>
+                    android:id="@+id/tlInputRequests"
+                    android:textSize="@dimen/regular_text_in_table">
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tr_1"
+                        android:text="+"
+                        android:textSize="@dimen/regular_text_in_table">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="request # 000"
+                            android:visibility="gone"
+                            android:textSize="@dimen/regular_text"/>
+                    </TableRow>
+                </TableLayout>
+                <!--tvInputRequests-->
             </ScrollView>
 
         </RelativeLayout>
@@ -82,6 +119,9 @@
                 android:textSize="@dimen/regular_text"/>
 
         </RelativeLayout>
+
+
+
 
     </RelativeLayout>
 
@@ -153,8 +193,8 @@
                             android:layout_height="wrap_content"
                             android:layout_toRightOf="@+id/rlDevice_1_status">
                             <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="@dimen/image_size"
+                                android:layout_height="@dimen/image_size"
                                 android:layout_marginLeft="@dimen/image_status_margin"
                                 android:layout_marginRight="@dimen/image_status_margin"
                                 android:background="@drawable/not_work"
@@ -245,8 +285,8 @@
                             android:layout_height="wrap_content"
                             android:layout_toRightOf="@+id/rlDevice_2_status">
                             <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="@dimen/image_size"
+                                android:layout_height="@dimen/image_size"
                                 android:layout_marginLeft="@dimen/image_status_margin"
                                 android:layout_marginRight="@dimen/image_status_margin"
                                 android:background="@drawable/not_work"
@@ -336,8 +376,8 @@
                             android:layout_height="wrap_content"
                             android:layout_toRightOf="@+id/rlDevice_3_status">
                             <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="@dimen/image_size"
+                                android:layout_height="@dimen/image_size"
                                 android:layout_marginLeft="@dimen/image_status_margin"
                                 android:layout_marginRight="@dimen/image_status_margin"
                                 android:background="@drawable/not_work"
@@ -428,8 +468,8 @@
                             android:layout_height="wrap_content"
                             android:layout_toRightOf="@+id/rlDevice_4_status">
                             <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="@dimen/image_size"
+                                android:layout_height="@dimen/image_size"
                                 android:layout_marginLeft="@dimen/image_status_margin"
                                 android:layout_marginRight="@dimen/image_status_margin"
                                 android:background="@drawable/not_work"
