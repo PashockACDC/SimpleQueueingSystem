@@ -21,23 +21,23 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/rlContainsStart">
-            <ImageButton
+            android:id="@+id/rlContainsStart"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+            <Button
                 android:layout_width="@dimen/image_size"
                 android:layout_height="@dimen/image_size"
                 android:background="@drawable/start"
                 android:id="@+id/ibStart"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/ibStart"
+                android:layout_toEndOf="@+id/ibStart"
+                android:text="Max: 50"
+                android:textSize="@dimen/requests_text_header"/>
         </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="3dp"
-            android:id="@+id/rlContainsSugests"
-            android:layout_alignRight="@+id/tvInputRequestsHeader"
-            android:layout_alignEnd="@+id/tvInputRequestsHeader"></RelativeLayout>
 
         <Button
             android:layout_width="match_parent"
@@ -54,12 +54,12 @@
             android:layout_height="wrap_content"
             android:text="@string/InputRequests"
             android:textSize="@dimen/requests_text_header"
-            android:id="@+id/tvInputRequestsHeader"
             android:layout_below="@+id/button"
             android:layout_toEndOf="@+id/rlContainsStart"
             android:layout_toRightOf="@+id/rlContainsStart"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:id="@+id/tvInputRequestsHeader" />
 
 
 

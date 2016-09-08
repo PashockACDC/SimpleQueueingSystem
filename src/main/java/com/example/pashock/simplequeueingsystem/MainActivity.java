@@ -3,6 +3,7 @@ package com.example.pashock.simplequeueingsystem;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TableLayout;
@@ -16,7 +17,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     TableLayout[] tl;
     TableRow tableRow;
     ImageView[] imageViews;
-    ImageButton ibStart;
+    Button ibStart;
 
     /** Called when the activity is first created. */
     public void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         imageViews[1] = (ImageView)findViewById(R.id.image_Device_2);
         imageViews[2] = (ImageView)findViewById(R.id.image_Device_3);
         imageViews[3] = (ImageView)findViewById(R.id.image_Device_4);
-        ibStart = (ImageButton)findViewById(R.id.ibStart);
+        ibStart = (Button)findViewById(R.id.ibStart);
 
         for (int i = 0; i < 4; i++)
             imageViews[i].setOnClickListener(this);
