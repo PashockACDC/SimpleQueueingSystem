@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/rl_1"
+        android:layout_margin="5dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/max_queque"
+                android:textSize="20sp"
+                android:gravity="start"
+                android:lineSpacingMultiplier="1"
+                android:layout_toLeftOf="@+id/et_max"
+                android:layout_toStartOf="@+id/et_max" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end|center_vertical"
+                android:inputType="number"
+                android:text="50"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/et_max"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/rl_2"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/rl_1">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/interval_millis"
+                android:textSize="20sp"
+                android:gravity="start"
+                android:lineSpacingMultiplier="1"
+                android:layout_toLeftOf="@+id/et_interval"
+                android:layout_toStartOf="@+id/et_interval" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end|center_vertical"
+                android:inputType="number"
+                android:text="500"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/et_interval"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/rl_2">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Назад"
+            android:id="@+id/bntBackToMain"/>
+    </RelativeLayout>
+
+</RelativeLayout>

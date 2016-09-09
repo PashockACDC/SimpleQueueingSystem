@@ -36,7 +36,8 @@
                 android:layout_toRightOf="@+id/ibStart"
                 android:layout_toEndOf="@+id/ibStart"
                 android:text="Max: 50"
-                android:textSize="@dimen/requests_text_header"/>
+                android:textSize="@dimen/requests_text_header"
+                android:id="@+id/btnMaxRequests"/>
         </RelativeLayout>
 
         <Button
@@ -45,16 +46,16 @@
             android:text="Interval: 500"
             android:textSize="@dimen/requests_text_header"
             android:layout_below="@+id/rlContainsStart"
-            android:id="@+id/button"
             android:layout_alignRight="@+id/tvInputRequestsHeader"
-            android:layout_alignEnd="@+id/tvInputRequestsHeader" />
+            android:layout_alignEnd="@+id/tvInputRequestsHeader"
+            android:id="@+id/btnInterval" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/InputRequests"
             android:textSize="@dimen/requests_text_header"
-            android:layout_below="@+id/button"
+            android:layout_below="@+id/btnInterval"
             android:layout_toEndOf="@+id/rlContainsStart"
             android:layout_toRightOf="@+id/rlContainsStart"
             android:layout_alignParentLeft="true"
