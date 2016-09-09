@@ -117,8 +117,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
             return;
         }
         int[] params = data.getIntArrayExtra("max_req and interval");
-        btnMaxRequests.setText("Max: " + String.valueOf(params[0]));
-        btnInterval.setText("Interval: " + String.valueOf(params[1]));
+        max_Requests = params[0];
+        interval = params[1];
+        btnMaxRequests.setText("Max: " + String.valueOf(max_Requests));
+        btnInterval.setText("Interval: " + String.valueOf(interval));
 //        if(!checkFirst) {
 //            btnMaxRequests.setText("Max: " + String.valueOf(max_Requests));
 //            btnInterval.setText("Interval: " + String.valueOf(interval));

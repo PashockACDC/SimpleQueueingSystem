@@ -7,7 +7,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -50,6 +49,7 @@ public class SettingsActivity extends Activity implements View.OnClickListener {
                     data[1] = Integer.parseInt(et_interval.getText().toString());
                 } catch (NumberFormatException ex) {
                     Toast.makeText(this, "Пустой ввод!", Toast.LENGTH_SHORT).show();
+                    //TODO: need better catching errors!!!
                     return;  //don't exit while empty input
                 }
                 Intent intent = new Intent();
@@ -61,34 +61,15 @@ public class SettingsActivity extends Activity implements View.OnClickListener {
     }
 
 
-//    @Override
-//    protected void onDestroy() {
-//        if(!MainActivity.checkFirst) {
-//            MainActivity.checkFirst = true;
-//        }
-//        try {
-//            MainActivity.max_Requests = Integer.parseInt(et_max.getText().toString());
-//            MainActivity.interval = Integer.parseInt(et_interval.getText().toString());
-//        }
-//        catch (NumberFormatException ex) {
-//            Toast.makeText(this, "Пустой ввод!", Toast.LENGTH_SHORT).show();
-//            return;
-//        }
-//        super.onDestroy();
-//    }
-
-
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-//        if(!MainActivity.checkFirst) {
-//            MainActivity.checkFirst = true;
-//        }
         try {
             MainActivity.max_Requests = Integer.parseInt(et_max.getText().toString());
             MainActivity.interval = Integer.parseInt(et_interval.getText().toString());
         }
         catch (NumberFormatException ex) {
             Toast.makeText(this, "Пустой ввод!", Toast.LENGTH_SHORT).show();
+            //TODO: need better catching errors!!!
             return false;  //don't exit while empty input
         }
         super.onDestroy();
