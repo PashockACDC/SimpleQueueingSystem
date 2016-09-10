@@ -7,7 +7,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.TextView;
 
 /**
  * Created by Pashock on 09.09.2016.
@@ -17,6 +17,7 @@ public class SettingsActivity extends Activity implements View.OnClickListener {
     EditText et_max;
     EditText et_interval;
     Button btnBackToMain;
+    TextView tvError;
 
 
     @Override
@@ -27,6 +28,7 @@ public class SettingsActivity extends Activity implements View.OnClickListener {
         et_max = (EditText)findViewById(R.id.et_max);
         et_interval = (EditText)findViewById(R.id.et_interval);
         btnBackToMain = (Button)findViewById(R.id.bntBackToMain);
+        tvError = (TextView)findViewById(R.id.tvError);
 
         Intent intent = getIntent();
         int[] data = intent.getIntArrayExtra("max_req and interval");
@@ -48,7 +50,7 @@ public class SettingsActivity extends Activity implements View.OnClickListener {
                     data[0] = Integer.parseInt(et_max.getText().toString());
                     data[1] = Integer.parseInt(et_interval.getText().toString());
                 } catch (NumberFormatException ex) {
-                    Toast.makeText(this, "Пустой ввод!", Toast.LENGTH_SHORT).show();
+                    tvError.setVisibility(View.VISIBLE);
                     //TODO: need better catching errors!!!
                     return;  //don't exit while empty input
                 }
@@ -68,7 +70,7 @@ public class SettingsActivity extends Activity implements View.OnClickListener {
             MainActivity.interval = Integer.parseInt(et_interval.getText().toString());
         }
         catch (NumberFormatException ex) {
-            Toast.makeText(this, "Пустой ввод!", Toast.LENGTH_SHORT).show();
+            tvError.setVisibility(View.VISIBLE);
             //TODO: need better catching errors!!!
             return false;  //don't exit while empty input
         }

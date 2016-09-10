@@ -129,4 +129,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 //        }
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return false;
+        //return super.onKeyDown(keyCode, event);
+    }
 }
