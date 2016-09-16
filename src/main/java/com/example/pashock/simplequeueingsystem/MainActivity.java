@@ -1,22 +1,33 @@
 package com.example.pashock.simplequeueingsystem;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
+    static boolean checkFirst = false;
+    static int max_Requests = 50;
+    static int interval = 500;
+
     static int n = 1;
+
     TextView tv;
     TableLayout[] tl;
     TableRow tableRow;
     ImageView[] imageViews;
-    ImageButton ibStart;
+    Button btnMaxRequests;
+    Button btnInterval;
+    Button ibStart;
 
     /** Called when the activity is first created. */
     public void onCreate(Bundle savedInstanceState) {
@@ -38,10 +49,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
         imageViews[1] = (ImageView)findViewById(R.id.image_Device_2);
         imageViews[2] = (ImageView)findViewById(R.id.image_Device_3);
         imageViews[3] = (ImageView)findViewById(R.id.image_Device_4);
-        ibStart = (ImageButton)findViewById(R.id.ibStart);
+        btnMaxRequests = (Button)findViewById(R.id.btnMaxRequests);
+        btnInterval = (Button)findViewById(R.id.btnInterval);
+        ibStart = (Button)findViewById(R.id.ibStart);
 
         for (int i = 0; i < 4; i++)
             imageViews[i].setOnClickListener(this);
+        btnMaxRequests.setOnClickListener(this);
+        btnInterval.setOnClickListener(this);
         ibStart.setOnClickListener(this);
     }
 
@@ -76,11 +91,47 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 }
                 break;
 
+            case R.id.btnMaxRequests:
+            case R.id.btnInterval:
+                Intent intent = new Intent(this, SettingsActivity.class);
+                int[] data = new int[2];
+                data[0] = max_Requests;
+                data[1] = interval;
+                intent.putExtra("max_req and interval", data);
+                //if(!checkFirst) {checkFirst = true;}
+                startActivityForResult(intent, 1);
+                break;
+
             case R.id.ibStart:
-                //TODO://////
+                Toast.makeText(this, "-->", Toast.LENGTH_SHORT).show();
                 break;
 
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (data == null) {
+            btnMaxRequests.setText("Max: " + String.valueOf(max_Requests));
+            btnInterval.setText("Interval: " + String.valueOf(interval));
+            return;
+        }
+        int[] params = data.getIntArrayExtra("max_req and interval");
+        max_Requests = params[0];
+        interval = params[1];
+        btnMaxRequests.setText("Max: " + String.valueOf(max_Requests));
+        btnInterval.setText("Interval: " + String.valueOf(interval));
+//        if(!checkFirst) {
+//            btnMaxRequests.setText("Max: " + String.valueOf(max_Requests));
+//            btnInterval.setText("Interval: " + String.valueOf(interval));
+//            Toast.makeText(this, "Max:" + max_Requests + "\n" +
+//                    "Interval: " + interval, Toast.LENGTH_SHORT).show();
+//        }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return false;
+        //return super.onKeyDown(keyCode, event);
+    }
 }
