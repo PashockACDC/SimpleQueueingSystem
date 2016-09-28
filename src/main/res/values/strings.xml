@@ -8,4 +8,10 @@
     <string name="worked_requests">Обработанные заявки:</string>
     <string name="max_queque">Максимально возможное количество элементов в очереди (max = 1000000)</string>
     <string name="interval_millis">Интервал срабатывания таймера в миллисекундах (min = 10; max = 10000)</string>
+    <string-array name="typeofRequests">
+        <item>XCHG</item>
+        <item>ACNT</item>
+        <item>CRED</item>
+        <item>CARD</item>
+    </string-array>
 </resources>
